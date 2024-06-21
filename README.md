@@ -7,12 +7,19 @@ Have you ever wanted a slow, bad-performing regex parser? Do you not trust those
 For real, this regex parser recognizes a subset of what is generally understood to be the regex language, with the following rules (R is the start symbol here):
 
 R -> S
+
 R -> RR
+
 R -> R*
+
 R -> R+
+
 R -> R|R
+
 R -> RS
+
 R -> (R)
+
 S -> any (at least ascii) character defined in the regex
 
 Note that this language doesn't recognize some common conveniences, like the ability to just express "any alphabetic symbol" like [a-Z]. It also allows expressions such as (ab)+* and (ab)*+, which I have judged to be good enough, since the "meaning" of a regex isn't meaningfully changed by allowing them.
@@ -24,7 +31,9 @@ First, import hello.py
 When you call regex(regexstring), you can think of it as creating a DFA that is then used by the function check_if_valid_nonregularized to evaulate any string passed into it
 
 dfa = regex("abc|d")
+
 is_consistent_with_dfa = check_if_valid_nonregularized(dfa, "d")
+
 is_consistent_with_dfa_2 = check_if_valid_nonregularized(dfa, "abd")
 
 Once created, the DFA can be used to check if any arbitrary string fits the regular expression.
