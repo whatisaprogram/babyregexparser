@@ -38,7 +38,7 @@ is_consistent_with_dfa_2 = check_if_valid_nonregularized(dfa, "abd")
 
 Once created, the DFA can be used to check if any arbitrary string fits the regular expression.
 
-Since this isn't really production code, it's very messy, and there are a lot of things that could be refactored. For example, making my AST generator a regressive function would have saved me a lot of headaches when testing. You may also see "NFAify" in place of "DFAify", stuff like that. 
+Since this isn't really production code, it's very messy, and there are a lot of things that could be refactored and outright eliminated. For example, making my AST generator a regressive function would have saved me a lot of headaches when testing. You may also see "NFAify" in place of "DFAify", stuff like that. Also, there are some classes I never used, but I cherished them like my own children, and thus I have decided to keep them there. 
 
 exam.py contains some of the test cases with runtime measurements. 
 
